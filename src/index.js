@@ -98,6 +98,7 @@ class Game extends React.Component {
 
     let status
     if(winner) status = 'Winner: ' + winner
+    else if(this.state.stepNumber === current.squares.length) status = 'No Winner!'
     else status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
 
     return (
@@ -110,7 +111,7 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div className="status">{status}</div>
-          <ol>{moves}</ol>
+          <ol className="move-list">{moves}</ol>
         </div>
       </div>
     )
